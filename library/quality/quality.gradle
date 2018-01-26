@@ -37,7 +37,7 @@ task findbugs(type: FindBugs, dependsOn: "assembleDebug") {
     exclude '**/gen/**'
 
     reports {
-        xml.enabled = false
+        xml.enabled = true
         html.enabled = true
         xml {
             destination "$reportsDir/findbugs.xml"
@@ -60,7 +60,7 @@ task pmd(type: Pmd) {
     exclude '**/gen/**'
 
     reports {
-        xml.enabled = false
+        xml.enabled = true
         html.enabled = true
         xml {
             destination "$reportsDir/pmd.xml"
