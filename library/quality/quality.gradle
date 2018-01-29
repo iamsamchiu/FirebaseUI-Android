@@ -1,7 +1,7 @@
 apply plugin: 'checkstyle'
 apply plugin: 'findbugs'
 apply plugin: 'pmd'
-check.dependsOn 'checkstyle', 'findbugs', 'pmd'
+check.dependsOn 'checkstyle', 'findbugs', 'pmd', 'cpd'
 
 def configDir = "${project.rootDir}/library/quality"
 def reportsDir = "${project.buildDir}/reports"
@@ -67,6 +67,20 @@ task pmd(type: Pmd) {
         }
         html {
             destination "$reportsDir/pmd.html"
+        }
+    }
+}
+
+/* add CPD to check trigger 1*/
+task cpd << {
+    ant.taskdef(name: 'cpd',
+            classname: 'net.sourceforge.pmd.cpd.CPDTask',
+            classpath: configurations.pmd.asPath)
+    ant.cpd(minimumTokenCount: '100',
+            format: 'xml',
+            outputFile: new File(reportsDir , 'cpd.xml')) {
+        fileset(dir: "src/main/java") {
+            include(name: '**/*.java')
         }
     }
 }

@@ -37,7 +37,7 @@ node('master') {
 		dry 	canComputeNew: false, 
 				defaultEncoding: '', 
 				healthy: '', 
-				pattern: '**/build/reports/pmd/cpd/*.xml', 
+				pattern: '**/build/reports/cpd*.xml', 
 				unHealthy: ''
 		jacoco()
 	}
