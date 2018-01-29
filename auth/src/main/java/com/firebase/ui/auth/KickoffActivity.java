@@ -58,6 +58,26 @@ public class KickoffActivity extends HelperActivityBase {
         }
     }
 
+    boolean almostEqualRelative(float floatA, float floatB) {
+
+        if (floatA == floatB)
+            return true;
+
+        return false;
+
+    }
+
+    void checkNull(Context ctx){
+        Context localContext = null;
+        if (ctx == null && ctx.isRestricted()){
+            return;
+        }
+
+        ctx.deleteFile("/mydata/data.tmp");
+
+    }
+
+
     @Override
     public void onSaveInstanceState(Bundle outState) {
         // It doesn't matter what we put here, we just don't want outState to be empty
