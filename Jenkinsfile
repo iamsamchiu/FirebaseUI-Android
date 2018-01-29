@@ -8,7 +8,7 @@ node('master') {
 	}
 
 	stage('Gradle Build') {
-		gradle 'assembleDebug check jacocoTestReport'
+		gradle 'clean assembleDebug check jacocoTestReport'
 	}
 
 	stage('Publishing Reports') {
