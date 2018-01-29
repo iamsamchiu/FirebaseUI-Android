@@ -20,19 +20,19 @@ node('master') {
 		checkstyle 	canComputeNew: false, 
 					defaultEncoding: '', 
 					healthy: '', 
-					pattern: '**/build/reports/checkstyle/*.xml', 
+					pattern: '**/build/reports/checkstyle/checkstyle*.xml', 
 					unHealthy: ''
 		findbugs 	canComputeNew: false, 
 					defaultEncoding: '', 
 					excludePattern: '', 
 					healthy: '', 
 					includePattern: '', 
-					pattern: '**/build/reports/findbugs/findbugs*.xml', 
+					pattern: '**/build/reports/findbugs*.xml', 
 					unHealthy: ''
 		pmd 	canComputeNew: false, 
 				defaultEncoding: '', 
 				healthy: '', 
-				pattern: '**/build/reports/pmd/*.xml', 
+				pattern: '**/build/reports/pmd*.xml', 
 				unHealthy: ''
 		dry 	canComputeNew: false, 
 				defaultEncoding: '', 
