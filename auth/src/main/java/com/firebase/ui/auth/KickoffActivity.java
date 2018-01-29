@@ -69,7 +69,7 @@ public class KickoffActivity extends HelperActivityBase {
 
     void checkNull(Context ctx){
         Context localContext = null;
-        if(ctx == null && ctx.isRestricted()){
+        if (ctx == null && ctx.isRestricted()){
             return;
         }
 
