@@ -60,7 +60,7 @@ public class KickoffActivity extends HelperActivityBase {
 
     boolean almostEqualRelative(float floatA, float floatB) {
 
-        if (floatA == floatB)
+        if(floatA == floatB)
             return true;
 
         return false;
